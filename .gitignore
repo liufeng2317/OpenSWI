@@ -23,8 +23,6 @@ Script/Training/OpenSWI-deep/JupyterNotebook/
 
 SWInversion/ADsurf
 SWInversion/plot_source
-Datasets/OpenSWI/Datasets/
-Datasets/OpenSWI/Figure
 Datasets/SWIDiffusion/Sampling/
 Datasets/SWIDiffusion
 
@@ -36,8 +34,3 @@ SWInversion/model/dispformer_local_global.py
 SWInversion/model/FCNN.py
 SWInversion/model/sfnet.py
 SWInversion/model/Unet.py
-
-Datasets/OpenSWI/.gitattributes
-Datasets/OpenSWI/.gitignore
-Datasets/OpenSWI/README.md
-Datasets/OpenSWI/.git
