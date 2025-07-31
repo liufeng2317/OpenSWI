@@ -1,0 +1,43 @@
+# common folder
+utils/
+__pycache__/
+.history/
+.vscode/
+backup/
+Backup/
+log/
+checkpoints/
+training_example_checkpoints/
+Article-Figure/
+python/
+data/
+
+# common file
+*.sh
+
+# specific folder
+Script/
+Script/Training/OpenSWI-shallow-Subsets
+Script/Training/OpenSWI-shallow/JupyterNotebook/
+Script/Training/OpenSWI-deep/JupyterNotebook/
+
+SWInversion/ADsurf
+SWInversion/plot_source
+Datasets/OpenSWI/Datasets/
+Datasets/OpenSWI/Figure
+Datasets/SWIDiffusion/Sampling/
+Datasets/SWIDiffusion
+
+# specific file
+Script/Training/OpenSWI-shallow/readme.md
+Script/Training/OpenSWI-deep/readme.md
+SWInversion/model/dispformer.py
+SWInversion/model/dispformer_local_global.py
+SWInversion/model/FCNN.py
+SWInversion/model/sfnet.py
+SWInversion/model/Unet.py
+
+Datasets/OpenSWI/.gitattributes
+Datasets/OpenSWI/.gitignore
+Datasets/OpenSWI/README.md
+Datasets/OpenSWI/.git
