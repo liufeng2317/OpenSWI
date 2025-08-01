@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/github/forks/liufeng2317/OpenSWI" />
 </div>
 <div align="center">
-  <img src="https://img.shields.io/github/license/liufeng2317/OpenSWI" />
   <img src="https://img.shields.io/github/repo-size/liufeng2317/OpenSWI"/>
   <img src="https://img.shields.io/github/last-commit/liufeng2317/OpenSWI"/>
   <img src="https://img.shields.io/badge/lauguage-python-%233572A5"/>
@@ -19,7 +18,7 @@
 
 ---
 
-![](./Figures/Figure1.png)
+![](./Figures/OpenSWI.png)
 
 > **OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion**
 > 
@@ -287,6 +286,10 @@ disp = p_map(
 )
 ```
 
+Example of OpenSWI-shallow data:
+<div align="center"; width=80%> <img src="./Figures/OpenSWI-shallow-example.png"> </img> </div>
+
+
 Details of this example can be found at
 
 | Dataset Type    | Description                         | Link                                                                                      |
@@ -365,6 +368,9 @@ disp_data = np.array(disp_data)
 vel_models = np.array(vel_models)
 
 ```
+Example of OpenSWI-deep data:
+<div align="center"; width=80%> <img src="./Figures/OpenSWI-deep-example.png"> </img> </div>
+
 
 Details of this example can be found at:
 
@@ -428,7 +434,9 @@ flowchart LR
 - **Training**:  
   Simulates noise and missing data to enhance model robustness.
 
-Package for training a deep learning model for Surface Wave Inversion Can be found at [SWInversion](./SWInversion/)
+The package for training a deep learning model for Surface Wave Inversion can be found at [SWInversion](./SWInversion/). We encourage users to utilize the pre-existing transformer-based SWI inversion network, [Dispformer](https://github.com/liufeng2317/DispFormer), for enhanced performance.
+
+![DispFormer](./Figures/DispFormer.png)
 
 ---
 
