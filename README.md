@@ -585,9 +585,9 @@ If you use this dataset in your research, please cite:
 ----
 
 
-## 📝 **License**
+## ⚖️ **License**
 
-Datasets Released under the **CC BY 4.0 License**. See the full license in the repository.
+This project is licensed under the Creative Commons Attribution 4.0 International License - see the [LICENSE](./LICENSE) file for details.
 
 
 ---
