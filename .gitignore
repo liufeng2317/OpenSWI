@@ -11,6 +11,7 @@ training_example_checkpoints/
 Article-Figure/
 python/
 data/
+Article-Figures/
 
 # common file
 *.sh
@@ -23,8 +24,10 @@ Script/Training/OpenSWI-deep/JupyterNotebook/
 
 SWInversion/ADsurf
 SWInversion/plot_source
-Datasets/SWIDiffusion/Sampling/
-Datasets/SWIDiffusion
+Datasets/Datasets-Construction/OpenSWI-real/CSRM/Figures
+Datasets/Datasets-Construction/OpenSWI-real/LongBeanch/Figures
+Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/Figures
+Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Base/Figures
 
 # specific file
 Script/Training/OpenSWI-shallow/readme.md
