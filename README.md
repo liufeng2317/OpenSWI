@@ -592,7 +592,7 @@ If you use this dataset in your research, please cite:
 
 📧 **Contact Information**:  
 - [![Email](https://img.shields.io/badge/Email-liufeng2317@sjtu.edu.cn-blue?style=flat&logo=gmail)](mailto:liufeng2317@sjtu.edu.cn)  
-- [![Alt Email](https://img.shields.io/badge/Alt_Email-liufeng2317@mail.ustc.edu.cn-blue?style=flat&logo=gmail)](mailto:liufeng1@pjlab.org.cn)
+- [![Alt Email](https://img.shields.io/badge/Alt_Email-liufeng1@pjlab.org.cn-blue?style=flat&logo=gmail)](mailto:liufeng1@pjlab.org.cn)
 
 
 ----
