@@ -1,4 +1,8 @@
-# Datasets
+<h1 align="center">
+  <span style="font-family: 'Papyrus', sans-serif; color: red; font-weight: bold;">OpenSWI</span>:
+  <span style="font-family: 'Papyrus', sans-serif; color:rgb(14, 126, 146);">A Massive-Scale Benchmark Dataset for </span> <br> 
+  <span style="font-family: 'Papyrus', sans-serif; color:rgb(14, 126, 146);">Surface Wave Dispersion Curve Inversion</span>
+</h1>
 
 ⚠️ **Note: `Datasets/OpenSWI` is a Hugging Face dataset submodule**  
 GitHub cannot directly redirect to external repositories, so please use the link below:  

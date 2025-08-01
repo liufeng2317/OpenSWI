@@ -1,4 +1,8 @@
-<h1 align="center">OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion</h1>
+<h1 align="center">
+  <span style="font-family: 'Papyrus', sans-serif; color: red; font-weight: bold;">OpenSWI</span>:
+  <span style="font-family: 'Papyrus', sans-serif; color:rgb(14, 126, 146);">A Massive-Scale Benchmark Dataset for </span> <br> 
+  <span style="font-family: 'Papyrus', sans-serif; color:rgb(14, 126, 146);">Surface Wave Dispersion Curve Inversion</span>
+</h1>
 
 <p align="center">
     🌐 <a href="" target="_blank">Project</a> | 
@@ -22,7 +26,7 @@
 
 > **OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion**
 > 
-> [**Feng Liu**](https://liufeng2317.github.io/), Sijie Zhao, Xinyu Gu, Fenghua Lin, Yaxing Li*, Rui Su*, Jianping Huang, Lei Bai
+> [**Feng Liu**](https://liufeng2317.github.io/), Sijie Zhao, Xinyu Gu, Fenghua Ling, Yaxing Li*, Rui Su*, Jianping Huang, Lei Bai
 >> 
 >> **Abstract:** Surface wave dispersion curve inversion is fundamental to shallow resource exploration and deep geological evolution studies, yet it remains challenged by low computational efficiency, sensitivity to initial models, and susceptibility to local minima. Data-driven deep learning methods, inspired by their success in computer vision and other fields, show great potential for enabling efficient and accurate inversion. However, the lack of large-scale and diverse benchmark datasets for surface wave dispersion curves continues to limit the development and evaluation of such methods in seismic imaging. To address this gap, we first present SWIDP, a complete and efficient dataset construction pipeline that automates the entire workflow from geological model generation to dispersion curve synthesis. Using SWIDP, we built two large-scale benchmark datasets: (1) **OpenSWI-shallow**, based on 2-D geological models from the OpenFWI dataset, which covers a wide range of near-surface geological features (**Flat, Flat-Fault, Fold, Fold-Fault, and Field**) and contains over **22 million** 1-D velocity profiles paired with fundamental-mode group and phase velocity dispersion curves; and (2) **OpenSWI-deep**, derived from the integration of **14 global and regional 3-D geological models**, which comprises approximately **1.26 million** pairs of high-fidelity synthetic data. Additionally, we curated and released **OpenSWI-real**, an AI-ready dataset containing observed dispersion curves and corresponding 1-D reference velocity models, providing a robust basis for evaluating real-world model performance. Experimental results show that Transformer-based models trained on the synthetic OpenSWI datasets yield inversion results on observed data that closely match reference models, demonstrating the datasets’ diversity and representativeness. To promote advances in intelligent surface wave dispersion curve inversion, we openly release the SWIDP toolbox, the complete OpenSWI datasets, pre-trained deep learning models, and all associated codes, providing comprehensive resources for the research community.
 
@@ -570,7 +574,7 @@ If you use this dataset in your research, please cite:
 ```bibtex
 @software{liufeng_2025_openswi,
   title={OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion},
-  author={Feng Liu, Sijie Zhao, Xinyu Gu, Fenghua Lin, Peiqin Zhuang, Rui Su, Yaxing Li, Jianping Huang, Lei Bai},
+  author={Feng Liu, Sijie Zhao, Xinyu Gu, Fenghua Ling, Peiqin Zhuang, Rui Su, Yaxing Li, Jianping Huang, Lei Bai},
   year={2025},
 }
 ```
