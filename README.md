@@ -23,11 +23,12 @@
 
 > **OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion**
 > Feng Liu, Sijie Zhao, Xinyu Gu, Fenghua Lin, Yaxing Li*, Rui Su*, Jianping Huang, Lei Bai
+> 
 > **Abstract:** Surface wave dispersion curve inversion is fundamental to shallow resource exploration and deep geological evolution studies, yet it remains challenged by low computational efficiency, sensitivity to initial models, and susceptibility to local minima. Data-driven deep learning methods, inspired by their success in computer vision and other fields, show great potential for enabling efficient and accurate inversion. However, the lack of large-scale and diverse benchmark datasets for surface wave dispersion curves continues to limit the development and evaluation of such methods in seismic imaging. To address this gap, we first present SWIDP, a complete and efficient dataset construction pipeline that automates the entire workflow from geological model generation to dispersion curve synthesis. Using SWIDP, we built two large-scale benchmark datasets: (1) **OpenSWI-shallow**, based on 2-D geological models from the OpenFWI dataset, which covers a wide range of near-surface geological features (**Flat, Flat-Fault, Fold, Fold-Fault, and Field**) and contains over **22 million** 1-D velocity profiles paired with fundamental-mode group and phase velocity dispersion curves; and (2) **OpenSWI-deep**, derived from the integration of **14 global and regional 3-D geological models**, which comprises approximately **1.26 million** pairs of high-fidelity synthetic data. Additionally, we curated and released **OpenSWI-real**, an AI-ready dataset containing observed dispersion curves and corresponding 1-D reference velocity models, providing a robust basis for evaluating real-world model performance. Experimental results show that Transformer-based models trained on the synthetic OpenSWI datasets yield inversion results on observed data that closely match reference models, demonstrating the datasets’ diversity and representativeness. To promote advances in intelligent surface wave dispersion curve inversion, we openly release the SWIDP toolbox, the complete OpenSWI datasets, pre-trained deep learning models, and all associated codes, providing comprehensive resources for the research community.
 
 ----
 
-## [Datasets](https://huggingface.co/datasets/LiuFeng2317/OpenSWI)
+## 📊 [Datasets](https://huggingface.co/datasets/LiuFeng2317/OpenSWI)
 **More Details of the OpenSWI Datasets can be found at huggingface** ([OpenSWI Huggingface](https://huggingface.co/datasets/LiuFeng2317/OpenSWI))
 * [**OpenSWI-Shallow**](https://huggingface.co/datasets/LiuFeng2317/OpenSWI/tree/main/Datasets/OpenSWI-shallow/0.2-10s-Aug): 1D velocity profiles derived from 2D velocity models (OpenFWI dataset), paired with corresponding surface wave dispersion curves.
 * [**OpenSWI-Deep**](https://huggingface.co/datasets/LiuFeng2317/OpenSWI/tree/main/Datasets/OpenSWI-deep/1s-100s-Aug): 1D velocity profiles generated from high-resolution 3D geological models, sourced globally and regionally, tailored for deep geological studies.
@@ -204,7 +205,7 @@
 
 ----
 
-## [SWIDP: Integrated Workflow for Dataset Construction](./Datasets/OpenSWI/SWIDP/)  
+## 🔄 [SWIDP: Integrated Workflow for Dataset Construction](./Datasets/OpenSWI/SWIDP/)  
 
 SWIDP provides a fully modular pipeline for constructing large-scale surface-wave dispersion curve datasets:  
 
@@ -229,7 +230,7 @@ flowchart LR
 
 ---
 
-### Example 1: Building the **OpenSWI-shallow** Dataset
+### 📚 Example 1: Building the **OpenSWI-shallow** Dataset
 
 ```python
 import numpy as np
@@ -289,17 +290,17 @@ Details of this example can be found at
 
 | Dataset Type    | Description                         | Link                                                                                      |
 |-----------------|-------------------------------------|-------------------------------------------------------------------------------------------|
-| **OpenSWI-shallow Example** | Example notebook for the OpenSWI dataset | [OpenSWI-shallow-example.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/00_OpenSWI-shallow-example.ipynb) |
-| **Flat**        | Flat velocity model construction    | [OpenFWI-FlatVel-A.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_1_OpenFWI-FlatVel-A.ipynb) |
-| **Flat-Fault**  | Flat velocity model with fault      | [OpenFWI-FlatFault-A.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_2_OpenFWI-FlatFault-A.ipynb) |
-| **Fold**        | Fold velocity model construction    | [OpenFWI-CurveVel-A.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_3_OpenFWI-CurveVel-A.ipynb) |
-| **Fold-Fault**  | Fold velocity model with fault      | [OpenFWI-CurveFault-A.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_4_OpenFWI-CurveFault-A.ipynb) |
-| **Field**       | Field data modeling                 | [OpenFWI-Style-A.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_5_OpenFWI-Style-A.ipynb) |
+| **OpenSWI-shallow Example** | Example notebook for the OpenSWI dataset | [OpenSWI-shallow-example.ipynb](./Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/00_OpenSWI-shallow-example.ipynb) |
+| **Flat**        | Flat velocity model construction    | [OpenFWI-FlatVel-A.ipynb](./Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_1_OpenFWI-FlatVel-A.ipynb) |
+| **Flat-Fault**  | Flat velocity model with fault      | [OpenFWI-FlatFault-A.ipynb](./Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_2_OpenFWI-FlatFault-A.ipynb) |
+| **Fold**        | Fold velocity model construction    | [OpenFWI-CurveVel-A.ipynb](./Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_3_OpenFWI-CurveVel-A.ipynb) |
+| **Fold-Fault**  | Fold velocity model with fault      | [OpenFWI-CurveFault-A.ipynb](./Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_4_OpenFWI-CurveFault-A.ipynb) |
+| **Field**       | Field data modeling                 | [OpenFWI-Style-A.ipynb](./Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/01_5_OpenFWI-Style-A.ipynb) |
 
 
 ---
 
-### Example 2: Building the **OpenSWI-deep** Dataset
+### 📚 Example 2: Building the **OpenSWI-deep** Dataset
 
 ```python
 import numpy as np
@@ -310,7 +311,7 @@ from SWIDP.dispersion import generate_mixed_samples,calculate_dispersion,transfo
 from p_tqdm import p_map
 
 # step1: get 1d velocity model (vp model or vs)
-depth_vs = np.loadtxt("./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/vs_demo.txt")
+depth_vs = np.loadtxt("./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/vs_demo.txt")
 depth = depth_vs[:,0]
 vs = depth_vs[:,1]
 
@@ -363,29 +364,30 @@ disp_data = np.array(disp_data)
 vel_models = np.array(vel_models)
 
 ```
+
 Details of this example can be found at:
 
 | Dataset Name               | Reference                                                                                   | Link                                                                                       |
 |----------------------------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| OpenSWI-deep-example        | -                                                                                           | [OpenSWI-deep-example.ipynb](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/00_OpenSWI-deep-example.ipynb) |
-| LITHO1.0                   | Pasyanos et al., 2014                                                                        | [LITHO1.0](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/12_LITHO1.ipynb) |
-| USTClitho1.0               | Xin et al., 2018                                                                             | [USTClitho1.0](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/11_USTCLitho1.ipynb) |
-| Central-and-Western US     | Shen et al., 2013                                                                            | [Central-and-Western US](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/13_Central_and_Western_US_Shen2013.ipynb) |
-| Continental China          | Shen et al., 2016                                                                            | [Continental China](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/14_Continental_China_Shen2016.ipynb) |
-| US Upper-Mantle            | Xie et al., 2018                                                                              | [US Upper-Mantle](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/03_US-upper-mantle.ipynb) |
-| EUCrust                    | Lu et al., 2018                                                                               | [EUCrust](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/05_EUCrust.ipynb) |
-| Alaska                     | Berg et al., 2020                                                                             | [Alaska](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/04_Alaska.ipynb) |
-| CSEM-Europe                | Blom et al., 2020; Fichtner et al., 2018; Çubuk-Sabuncu et al., 2017                         | [CSEM-Europe](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/02_CSEM_Europe.ipynb) |
-| CSEM-Eastmed               | Blom et al., 2020; Fichtner et al., 2018                                                     | [CSEM-Eastmed](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/01_CSEM_Eastmed.ipynb) |
-| CSEM-Iberian               | Fichtner et al., 2018; Fichtner et al., 2015                                                 | [CSEM-Iberian](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/09_CSEM_lberia.ipynb) |
-| CSEM-South Atlantic        | Fichtner et al., 2018; Colli et al., 2013                                                   | [CSEM-South Atlantic](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/07_CSEM_North_Atlantic.ipynb) |
-| CSEM-North Atlantic        | Fichtner et al., 2018; Krischer et al., 2018                                                | [CSEM-North Atlantic](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/07_CSEM_North_Atlantic.ipynb) |
-| CSEM-Japan                 | Fichtner et al., 2018; Simutė et al., 2016                                                 | [CSEM-Japan](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/08_CSEM_Japan.ipynb) |
-| CSEM-Australasia           | Fichtner et al., 2018; Fichtner et al., 2010                                               | [CSEM-Australasia](./Datasets/OpenSWI/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/10_CSEM_Australasia.ipynb) |
+| OpenSWI-deep-example        | -                                                                                           | [OpenSWI-deep-example.ipynb](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/00_OpenSWI-deep-example.ipynb) |
+| LITHO1.0                   | Pasyanos et al., 2014                                                                        | [LITHO1.0](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/12_LITHO1.ipynb) |
+| USTClitho1.0               | Xin et al., 2018                                                                             | [USTClitho1.0](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/11_USTCLitho1.ipynb) |
+| Central-and-Western US     | Shen et al., 2013                                                                            | [Central-and-Western US](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/13_Central_and_Western_US_Shen2013.ipynb) |
+| Continental China          | Shen et al., 2016                                                                            | [Continental China](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/14_Continental_China_Shen2016.ipynb) |
+| US Upper-Mantle            | Xie et al., 2018                                                                              | [US Upper-Mantle](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/03_US-upper-mantle.ipynb) |
+| EUCrust                    | Lu et al., 2018                                                                               | [EUCrust](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/05_EUCrust.ipynb) |
+| Alaska                     | Berg et al., 2020                                                                             | [Alaska](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/04_Alaska.ipynb) |
+| CSEM-Europe                | Blom et al., 2020; Fichtner et al., 2018; Çubuk-Sabuncu et al., 2017                         | [CSEM-Europe](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/02_CSEM_Europe.ipynb) |
+| CSEM-Eastmed               | Blom et al., 2020; Fichtner et al., 2018                                                     | [CSEM-Eastmed](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/01_CSEM_Eastmed.ipynb) |
+| CSEM-Iberian               | Fichtner et al., 2018; Fichtner et al., 2015                                                 | [CSEM-Iberian](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/09_CSEM_lberia.ipynb) |
+| CSEM-South Atlantic        | Fichtner et al., 2018; Colli et al., 2013                                                   | [CSEM-South Atlantic](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/07_CSEM_North_Atlantic.ipynb) |
+| CSEM-North Atlantic        | Fichtner et al., 2018; Krischer et al., 2018                                                | [CSEM-North Atlantic](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/07_CSEM_North_Atlantic.ipynb) |
+| CSEM-Japan                 | Fichtner et al., 2018; Simutė et al., 2016                                                 | [CSEM-Japan](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/08_CSEM_Japan.ipynb) |
+| CSEM-Australasia           | Fichtner et al., 2018; Fichtner et al., 2010                                               | [CSEM-Australasia](./Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/10_CSEM_Australasia.ipynb) |
 
 ----
 
-### [Deep Learning-based Surface Wave Dispersion Curve Inversion](./Script/Training/)
+## 🧠 [Deep Learning-based Surface Wave Dispersion Curve Inversion](./Script/Training/)
 
 This method leverages deep learning to directly invert surface wave dispersion curves (including period, phase velocity, and group velocity) into a 1D shear wave velocity profile of the subsurface. We use a Transformer-based framework for end-to-end inversion, where the input dispersion curves are processed through CNN modules to extract features, and Transformer blocks capture long-range dependencies to enhance inversion accuracy and stability. A depth-aware strategy dynamically adjusts the inversion depth range based on the input data, improving model performance. The loss function is based on Mean Squared Error (MSE), calculated only for the effective depth range. Additionally, noise and missing data are simulated during training to enhance the model's robustness.
 
@@ -429,7 +431,7 @@ Package for training a deep learning model for Surface Wave Inversion Can be fou
 
 ---
 
-### Training Example
+### 📚 Training Example
 ```python
 import torch
 from torch.utils.data import ConcatDataset, Dataset, DataLoader, random_split
@@ -552,7 +554,7 @@ Details of Training Examples
 
 ----
 
-## 📚 **Citation**
+## 🔖 **Citation**
 
 If you use this dataset in your research, please cite:
 
