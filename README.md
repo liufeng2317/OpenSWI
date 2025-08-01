@@ -1,7 +1,13 @@
-<h1 align="center">
+<!-- <h1 align="center">
   <span style="font-family: 'Papyrus', sans-serif; color: red; font-weight: bold;">OpenSWI</span>:
   <span style="font-family: 'Papyrus', sans-serif; color:rgb(14, 126, 146);">A Massive-Scale Benchmark Dataset for </span> <br> 
   <span style="font-family: 'Papyrus', sans-serif; color:rgb(14, 126, 146);">Surface Wave Dispersion Curve Inversion</span>
+</h1> -->
+
+<h1 align="center">
+  <span style="font-family: 'Garamond', sans-serif; color: red; font-weight: bold;">OpenSWI</span>:
+  <span style="font-family: 'Garamond', sans-serif; color:rgb(14, 126, 146);">A Massive-Scale Benchmark Dataset for </span> <br> 
+  <span style="font-family: 'Garamond', sans-serif; color:rgb(14, 126, 146);">Surface Wave Dispersion Curve Inversion</span>
 </h1>
 
 <p align="center">
