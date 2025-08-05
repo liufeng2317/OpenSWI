@@ -4,6 +4,19 @@ import numpy as np
 #################################################################
 #                               Misfits  
 #################################################################
+def RMSE_np(output: np.ndarray, target: np.ndarray) -> float:
+    """
+    Computes the Root Mean Squared Error (RMSE) between the output and target arrays.
+    
+    Args:
+        output (np.ndarray): Predicted values of shape (N, M), with units typically in km/s.
+        target (np.ndarray): Ground truth values of shape (N, M), same units as output.
+
+    Returns:
+        float: RMSE value, with the same unit as the input (e.g., km/s).
+    """
+    return np.sqrt(np.mean((output - target) ** 2))
+
 
 def NMSE(output, target):
     """

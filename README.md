@@ -94,98 +94,98 @@
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>40,959 x 4 x 300</td>
-  <td>245,771 x 4 x 70</td>
+  <td>245,771 x 4 x 301</td>
 </tr>
 <tr>
   <td>USTClitho1.0</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>9,125 x 4 x 300</td>
-  <td>54,750 x 4 x 70</td>
+  <td>54,750 x 4 x 301</td>
 </tr>
 <tr>
   <td>Central-and-Western US</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>6,803 x 4 x 300</td>
-  <td>40,818 x 4 x 70</td>
+  <td>40,818 x 4 x 301</td>
 </tr>
 <tr>
   <td>Continental China</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>4,516 x 4 x 300</td>
-  <td>27,096 x 4 x 70</td>
+  <td>27,096 x 4 x 301</td>
 </tr>
 <tr>
   <td>US Upper-Mantle</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>3,678 x 4 x 300</td>
-  <td>22,061 x 4 x 70</td>
+  <td>22,061 x 4 x 301</td>
 </tr>
 <tr>
   <td>EUcrust</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>43,520 x 4 x 300</td>
-  <td>261,155 x 4 x 70</td>
+  <td>261,155 x 4 x 301</td>
 </tr>
 <tr>
   <td>Alaska</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>19,408 x 4 x 300</td>
-  <td>116,448 x 4 x 70</td>
+  <td>116,448 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-Europe</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>21,931 x 4 x 300</td>
-  <td>131,586 x 4 x 70</td>
+  <td>131,586 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-Eastmed</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>12,782 x 4 x 300</td>
-  <td>76,692 x 4 x 70</td>
+  <td>76,692 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-Iberian</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>9,102 x 4 x 300</td>
-  <td>54,612 x 4 x 70</td>
+  <td>54,612 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-South Atlantic</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>7,371 x 4 x 300</td>
-  <td>44,226 x 4 x 70</td>
+  <td>44,226 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-North Atlantic</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>14,541 x 4 x 300</td>
-  <td>87,246 x 4 x 70</td>
+  <td>87,246 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-Japan</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>14,641 x 4 x 300</td>
-  <td>87,846 x 4 x 70</td>
+  <td>87,846 x 4 x 301</td>
 </tr>
 <tr>
   <td>CSEM-Astralasia</td>
   <td>1-100 s</td>
   <td>0-300 km / 1.0 km</td>
   <td>4,131 x 4 x 300</td>
-  <td>24,786 x 4 x 70</td>
+  <td>24,786 x 4 x 301</td>
 </tr>
 
 <tr>
