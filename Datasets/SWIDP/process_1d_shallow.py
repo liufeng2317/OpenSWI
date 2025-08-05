@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.interpolate import interp1d
 from scipy.interpolate import make_interp_spline, PchipInterpolator
-
+from SWIDP.dispersion import *
 
 # -------------------------------------------------------
 #  combine the velocity profiles with the same S-wave velocity
@@ -254,3 +254,123 @@ def augment_workflow(vs,depth,
         
     perturb_vs = np.array(perturb_vs)
     return perturb_vs
+
+# Note!
+# The following functions are used to show the process of datasets construction
+# Though they can be used to construct the datasets, while not adaptive to any types of data source
+# We encourage users to use the functions in the SWIDP toolkit directly
+# when developing customized workflows.
+
+# -------------------------------------------------------
+#  load the velocity model
+# -------------------------------------------------------
+def load_openfwi_velocity_model(path,index=0,depth_step=0.04):
+    """load the velocity model
+    """
+    vp = np.load(path)[index,0]
+    depth = np.arange(vp.shape[1])*depth_step
+    return vp,depth
+
+
+# -------------------------------------------------------
+#  get velocity profiles from the velocity model
+# -------------------------------------------------------
+def get_velocity_profiles(vp):
+    """get velocity profiles from the velocity model
+    """
+    return vp.T
+
+# -------------------------------------------------------
+#  convert the unit of the velocity model
+# -------------------------------------------------------
+def convert_unit(vp,unit_from="m/s",unit_to="km/s"):
+    """convert the unit of the velocity model
+    """
+    if unit_from == "m/s" and unit_to == "km/s":
+        return vp/1000
+    elif unit_from == "km/s" and unit_to == "m/s":
+        return vp*1000
+    else:
+        raise ValueError(f"Invalid unit: {unit_from} or {unit_to}")
+
+# -------------------------------------------------------
+#  remove duplicate profiles
+# -------------------------------------------------------
+def unique_profiles(vp):
+    """remove duplicate profiles
+    """
+    return np.unique(vp,axis=0)
+
+# -------------------------------------------------------
+#  interpolate the velocity profile
+# -------------------------------------------------------
+def interpolate_profile(depth_i_temp,vs_i_temp,depth):
+    """interpolate the velocity profile
+    """
+    f = interp1d(depth_i_temp,vs_i_temp,kind="previous")
+    return f(depth)
+
+class SWIModel:
+    """
+    Notes:
+        This class provides a simplified interface to demonstrate the core data processing workflow
+        used in the construction of the OpenSWI dataset, including velocity profile extraction,
+        data augmentation, and dispersion curve computation.
+
+        It is designed for illustrative purposes only and does not include full parameter tuning,
+        exception handling, or logging mechanisms.
+
+        For full implementation details, recommended usage patterns, and reproducible examples,
+        please refer to the official Jupyter notebooks provided in the project repository:
+        https://github.com/liufeng2317/OpenSWI/tree/master/Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug
+
+        Users are encouraged to use and adapt the functions in the SWIDP toolkit directly
+        when developing customized workflows.
+    """
+    def __init__(self,path,index=0,depth_step=0.04):
+        self.path = path
+        self.index = index
+        self.depth_step = depth_step
+
+    def load_openfwi_velocity_model(self):
+        vp,depth = load_openfwi_velocity_model(self.path,self.index,self.depth_step)
+        return vp,depth
+    
+    def get_velocity_profiles(self,vp):
+        return get_velocity_profiles(vp)
+    
+    def convert_unit(self,vp,unit_from="m/s",unit_to="km/s"):
+        return convert_unit(vp,unit_from,unit_to)
+    
+    def unique_profiles(self,vp):
+        return unique_profiles(vp)
+
+    def transform_vp_to_vs(self,vp):
+        return transform_vp_to_vs(vp)
+    
+    def combine_same_vs(self,vs,depth=None,vel_threshold=0.01):
+        return combine_same_vs(vs,depth,vel_threshold)
+    
+    def remove_thin_layer(self,vs,depth,thickness_threshold=0.1):
+        return remove_thin_layer(vs,depth,thickness_threshold)
+    
+    def perturb_vs_depth(self,vs,depth,vs_perturbation=0.05,thickness_perturbation=0.1,vel_threshold=0.1):
+        return perturb_vs_depth(vs,depth,vs_perturbation,thickness_perturbation,vel_threshold)
+    
+    def interpolate_profile(self,depth_i_temp,vs_i_temp,depth):
+        return interpolate_profile(depth_i_temp,vs_i_temp,depth)
+    
+    def transform_vs_to_vel_model(self,vs,depth):
+        return transform_vs_to_vel_model(vs,depth)
+
+    def generate_mixed_samples(self,num_samples=100,start=0.2,end=10,uniform_num=50,log_num=20,random_num=30):
+        return generate_mixed_samples(num_samples,start,end,uniform_num,log_num,random_num)
+    
+    def calculate_dispersion(self,vel_model,t):
+        return calculate_dispersion(vel_model,t)
+    
+    def save_velocity_model(self,save_path,vel_model):
+        np.savez(save_path,vel_model)
+    
+    def save_dispersion_curves(self,save_path,disp):
+        np.savez(save_path,disp)

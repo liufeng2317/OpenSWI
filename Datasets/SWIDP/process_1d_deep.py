@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.interpolate import interp1d
 from scipy.interpolate import make_interp_spline, PchipInterpolator
+from SWIDP.dispersion import *
 
 # -------------------------------------------------------
 #  find the moho depth
@@ -421,3 +422,153 @@ def smooth_vs_by_node_interp(vs, depth, n_nodes=10,method="spline"):
         return pchip(depth)
     else:
         raise ValueError(f"Invalid method: {method}")
+
+###################################################################################################
+# Note!
+# The following functions are used to show the process of datasets construction
+# Though they can be used to construct the datasets, while not adaptive to any types of data source
+# We encourage users to use the functions in the SWIDP toolkit directly
+# when developing customized workflows.
+###################################################################################################
+
+import os
+def load_Central_and_Western_US_velocity_model(data_path):
+    """load the velocity model
+    """
+    files = os.listdir(data_path)
+    # read the data
+    loc,vs_temp,crustal_thick = [],[],[]
+    max_len = 0
+    for file in files:
+        lines = open(os.path.join(data_path, file))
+        temp_data = []
+        for i,line in enumerate(lines):
+            line = line.strip().split()
+            line = list(map(float,line))
+            if i == 0:
+                loc.append([line[0],line[1]])
+                crustal_thick.append(line[2])
+            else:
+                temp_data.append([line[0],line[1]])
+        vs_temp.append(temp_data)
+        max_len = np.max([max_len,len(temp_data)])
+    vs = np.ones(((len(vs_temp),max_len,2)))*-1
+    for i,data in enumerate(vs_temp):
+        vs[i,:len(data),:] = data
+    loc = np.array(loc)
+    vs = np.array(vs)
+    crustal_thick = np.array(crustal_thick)
+    depth = vs[:,:,0]
+    vs = vs[:,:,1]
+    return depth,vs
+
+def extract_velocity_profiles(data_path,data_name = "Central_and_Western_US"):
+    if data_name == "Central_and_Western_US":
+        return load_Central_and_Western_US_velocity_model(data_path)
+    else:
+        raise ValueError(f"Invalid data name: {data_name}")
+
+def interpolate_velocity_profiles(depth,vs,depth_interp):
+    """interpolate the velocity profiles
+    """
+    from scipy.interpolate import interp1d
+    max_depth = 300+0.1
+    depth_interp = np.concatenate([
+        np.arange(0, max_depth, 1)
+    ])
+    vs_interp = np.zeros((vs.shape[0],depth_interp.shape[0]))
+    for i in range(vs.shape[0]):
+        vs_temp = vs[i,:]
+        depth_temp = depth[i,:]
+        depth_interp_temp = depth_interp[:np.argmin(np.abs(depth_interp-depth_temp.max()))]
+        f = interp1d(depth_temp.reshape(-1),vs_temp,kind='nearest')
+        vs_temp = f(depth_interp_temp)
+        vs_interp[i,:len(vs_temp)] = vs_temp
+    vs_interp[:,len(vs_temp):] = vs_interp[:,len(vs_temp)-1].reshape(-1,1)
+    return depth_interp,vs_interp
+
+from p_tqdm import p_map
+class SWIModel:
+    def __init__(self,data_path,data_name = "Central_and_Western_US"):
+        self.data_path = data_path
+        self.data_name = data_name
+
+    def extract_velocity_profiles(self):
+        return extract_velocity_profiles(self.data_path,self.data_name)
+    
+    def interpolate_velocity_profiles(self,depth,vs,depth_interp):
+        return interpolate_velocity_profiles(depth,vs,depth_interp)
+    
+    def combine_thin_sandwich(self,vs,depth,thickness_threshold=10,uniform_thickness=1,gradient_threshold=0.005,return_idx=False):
+        vs = p_map(combine_thin_sandwich,
+                   vs,
+                   list(depth.reshape(1,-1))*len(vs),
+                   [thickness_threshold]*len(vs),
+                   [uniform_thickness]*len(vs),
+                   [gradient_threshold]*len(vs),
+                   [return_idx]*len(vs))
+        vs = np.array(vs)
+        depth = np.array(depth)
+        return depth,vs
+    
+    def smooth_vs_by_node_interp(self,vs,depth,n_nodes=10,method="spline"):
+        vs = p_map(smooth_vs_by_node_interp,
+                   vs,
+                   list(depth.reshape(1,-1))*len(vs),
+                   [n_nodes]*len(vs),
+                   [method]*len(vs))
+        vs = np.array(vs)
+        depth = np.array(depth)
+        return depth,vs
+    
+    def find_moho_depth(self,vs,depth,moho_depth_range=[5,90],gradient_search=True,gradient_threshold=0.1,gradient_search_range=10):
+        moho_idx = p_map(find_moho_depth,
+                         vs,
+                         list(depth.reshape(1,-1))*len(vs),
+                         [moho_depth_range]*len(vs),
+                         [gradient_search]*len(vs),
+                         [gradient_threshold]*len(vs),
+                         [gradient_search_range]*len(vs))
+        moho_idx = np.array(moho_idx)
+        return moho_idx
+    
+    def augment_crust_moho_mantle(self,vs,depth,moho_idx,vs_perturb_range=[-0.1,0.1],crust_nodes_range=[3,10],mantle_nodes_range=[6,12],moho_shift_range=10,gaussian_smooth_sigma=2,return_nodes=False,random_seed=None):
+        vs_augmented = p_map(augment_crust_moho_mantle,
+                             vs,
+                             list(depth.reshape(1,-1))*len(vs),
+                             moho_idx,
+                             [vs_perturb_range]*len(vs),
+                             [crust_nodes_range]*len(vs),
+                             [mantle_nodes_range]*len(vs),
+                             [moho_shift_range]*len(vs),
+                             [gaussian_smooth_sigma]*len(vs),
+                             [return_nodes]*len(vs),
+                             [random_seed]*len(vs))
+        depth = np.array(depth)
+        vs_augmented = np.array(vs_augmented)
+        return depth,vs_augmented
+    
+    def transform_vs_to_vel_model(self,vs,depth):
+        vel_model = p_map(transform_vs_to_vel_model,
+                         vs,
+                         list(depth.reshape(1,-1))*len(vs))
+        vel_model = np.array(vel_model)
+        return vel_model
+    
+    def generate_mixed_samples(self,num_samples=100,start=0.2,end=10,uniform_num=50,log_num=20,random_num=30):
+        t = generate_mixed_samples(num_samples,start,end,uniform_num,log_num,random_num)
+        return t
+    
+    def calculate_dispersion(self,vel_model,t):
+        t = np.ones((len(vel_model),len(t)))*t
+        disp = p_map(calculate_dispersion,
+                     vel_model,
+                     list(t))
+        disp = np.array(disp)
+        return disp
+    
+    def save_velocity_model(self,save_path,vel_model):
+        return np.savez(save_path,vel_model)
+    
+    def save_dispersion_curves(self,save_path,dispersion_curves):
+        return np.savez(save_path,dispersion_curves)

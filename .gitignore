@@ -37,3 +37,5 @@ SWInversion/model/dispformer_local_global.py
 SWInversion/model/FCNN.py
 SWInversion/model/sfnet.py
 SWInversion/model/Unet.py
+Datasets/Datasets-Construction/OpenSWI-shallow/0.2-10s-Aug/00_OpenSWI-shallow-example-Article.ipynb
+Datasets/Datasets-Construction/OpenSWI-deep/1s-100s-Aug/00_OpenSWI-deep-example-Article.ipynb
