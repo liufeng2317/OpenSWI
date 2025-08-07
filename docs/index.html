@@ -43,6 +43,28 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <style>
+      /* 确保 .item 使用 flexbox 垂直居中对齐 */
+      .carousel .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 垂直居中 */
+        align-items: center;     /* 水平居中 */
+        height: 100%; /* 可选：设定固定高度或继承父元素高度 */
+        min-height: 200px; /* 根据你的页面调整 */
+        text-align: center;
+      }
+      
+      /* 可选：限制图片最大宽高，使其在不同尺寸间统一效果 */
+      .carousel .item img {
+        max-height: 1000px; /* 控制最大高度 */
+        max-width: 100%;
+        object-fit: contain; /* 保证图片不被拉伸 */
+      }
+    </style>
+    
+  
 </head>
 <body>
 
@@ -81,15 +103,16 @@
           <!-- Paper link -->
           <div class="column has-text-centered">
             <div class="publication-links">
-                  <!-- Arxiv PDF link -->
-              <span class="link-block">
+            
+            <!-- Arxiv PDF link -->
+            <!-- <span class="link-block">
                 <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="fas fa-file-pdf"></i>
                 </span>
                 <span>Paper</span>
               </a>
-            </span>
+            </span> -->
 
           <!-- Supplementary PDF link -->
           <!-- <span class="link-block">
@@ -102,6 +125,17 @@
             </a>
           </span> -->
 
+          <!-- Dataset link -->
+          <span class="link-block">
+            <a href="https://huggingface.co/datasets/LiuFeng2317/OpenSWI" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-database"></i>
+              </span>
+              <span>Dataset</span>
+            </a>
+          </span>
+          
           <!-- Github link -->
           <span class="link-block">
             <a href="https://github.com/liufeng2317/OpenSWI" target="_blank"
@@ -123,6 +157,7 @@
               <span>arXiv</span>
             </a>
           </span>
+
           </div>
         </div>
       </div>
@@ -172,34 +207,55 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure13.png" alt="Generalization performance on real-world CSRM data from the OpenSWI-real dataset."/>
+          <h2 class="subtitle has-text-centered">
+            Generalization performance on real-world CSRM data from the OpenSWI-real dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure4.png" alt="Representative samples from the OpenSWI-shallow dataset."/>
+          <h2 class="subtitle has-text-centered">
+            Representative samples from the OpenSWI-shallow dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure5.png" alt="Statistical characteristics of the OpenSWI-shallow dataset."/>
+          <h2 class="subtitle has-text-centered">
+            Statistical characteristics of the OpenSWI-shallow dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure6.png" alt="Continual expansion of the OpenSWI-shallow dataset using a DDPM module."/>
+          <h2 class="subtitle has-text-centered">
+            Continual expansion of the OpenSWI-shallow dataset using a DDPM module.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure8.png" alt="Representative samples from the OpenSWI-deep dataset."/>
+          <h2 class="subtitle has-text-centered">
+            Representative samples from the OpenSWI-deep dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure10.png" alt="The architecture of the Transformer used in this work for surface wave dispersion curve inversion."/>
+          <h2 class="subtitle has-text-centered">
+            The architecture of the Transformer used for surface wave dispersion curve inversion.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Figure12.png" alt="Generalization performance on real-world Long Beach data from the OpenSWI-real dataset."/>
+          <h2 class="subtitle has-text-centered">
+              Generalization performance on real-world Long Beach data from the OpenSWI-real dataset.
+          </h2>
+        </div>
   </div>
 </div>
 </div>
@@ -208,7 +264,7 @@
 
 
 <!-- Paper -->
-<!-- <section class="hero is-small is-light">
+<section class="hero is-small is-light">
 <div class="hero-body">
   <div class="container">
     <h2 class="title">Article PDF</h2>
@@ -216,7 +272,7 @@
     </iframe>
   </div>
 </div>
-</section> -->
+</section>
 <!--End paper -->
 
 
@@ -244,7 +300,7 @@
       <div class="column is-8">
         <div class="content" style="font-size: 0.9rem; color: #666; text-align: center;">
           <p>
-            © 2025 OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion. <br>
+            © 2025 OpenSWI <br>
             Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> (adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>). <br>
             Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
           </p>
