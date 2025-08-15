@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-    🌐 <a href="https://liufeng2317.github.io/OpenSWI/" target="_blank">Main Project</a> | 
+    🌐 <a href="https://liufeng2317.github.io/OpenSWI/" target="_blank">Main Page</a> | 
     📃 <a href="https://arxiv.org/abs/2508.10749" target="_blank">Paper</a> | 
     🤗 <a href="https://huggingface.co/datasets/LiuFeng2317/OpenSWI" target="_blank">Dataset</a> <br>
 </p>
