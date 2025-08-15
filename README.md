@@ -5,8 +5,8 @@
 </h1>
 
 <p align="center">
-    🌐 <a href="https://liufeng2317.github.io/OpenSWI/" target="_blank">Project</a> | 
-    📃 <a href="" target="_blank">Paper</a> | 
+    🌐 <a href="https://liufeng2317.github.io/OpenSWI/" target="_blank">Main Project</a> | 
+    📃 <a href="https://arxiv.org/abs/2508.10749" target="_blank">Paper</a> | 
     🤗 <a href="https://huggingface.co/datasets/LiuFeng2317/OpenSWI" target="_blank">Dataset</a> <br>
 </p>
 
@@ -572,10 +572,14 @@ Details of Training Examples
 If you use this dataset in your research, please cite:
 
 ```bibtex
-@software{liufeng_2025_openswi,
-  title={OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion},
-  author={Feng Liu, Sijie Zhao, Xinyu Gu, Fenghua Ling, Peiqin Zhuang, Yaxing Li, Rui Su, Lihua Fang, Lianqing Zhou, Jianping Huang, Lei Bai},
-  year={2025},
+@article{liu2025openswi,
+  title     = {OpenSWI: A Massive-Scale Benchmark Dataset for Surface Wave Dispersion Curve Inversion},
+  author    = {Liu, Feng and Zhao, Sijie and Gu, Xinyu and Ling, Fenghua and Li, Yaxing and Su, Rui and Zhuang, Peiqin and Lihua Fang and Zhou, Lianqing and Huang, Jianping and Bai, Lei},
+  year      = {2025},
+  journal   = {arXiv preprint arXiv:2508.10749},
+  url       = {https://arxiv.org/abs/2508.10749},
+  doi       = {10.48550/arXiv.2508.10749},
+  note      = {Dataset and code available at https://github.com/liufeng2317/OpenSWI}
 }
 ```
 
